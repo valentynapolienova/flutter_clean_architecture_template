@@ -7,7 +7,7 @@ This project is also a clean architecture structure demo. **Note** that it doesn
 **/features/sample_feature** is an example of file structure and configuration of a real app feature.
 ## Flavors
 
-This project has **prod** and **dev** flavors installed. They will be imported to the development environment via **.run** folder. Configuration for each flavor can be customized in **app_config.dart** file.
+This project has **prod** and **dev** flavors installed. They will be imported to the development environment via **.run** & **.vscode** folders. Configuration for each flavor can be customized in **app_config.dart** file.
 
 IOS flavors need to be additionaly configured in XCode. [This article can be used.](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b)
 ## Packages
