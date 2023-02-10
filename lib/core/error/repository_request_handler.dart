@@ -13,7 +13,7 @@ class RepositoryRequestHandler<T> {
       return Right(await request());
     } catch (error) {
       final failure = await errorHandler(error, defaultFailure);
-      // var _errorMessage = '[ERROR] Failure: ${failure.toString()}; Error: ${error.toString()};';
+      //var _errorMessage = '[ERROR] Failure: ${failure.toString()}; Error: ${error.toString()};';
       return Left(failure);
     }
   }
