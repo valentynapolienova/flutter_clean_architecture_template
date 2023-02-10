@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "dev",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=envFlavor=dev",
+        "--flavor",
+        "dev"
+      ]
+    },
+    {
+      "name": "prod",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "args": [
+        "--dart-define=envFlavor=prod",
+        "--flavor",
+        "prod"
+      ]
+    }
+  ]
+}
