@@ -2,7 +2,7 @@
 
 This template is made to minimize the efforts of new project creation and configuration. It has pre-installed packages (which will be listed below), flavors and some base helper classes.
 
-This project is also a clean architecture structure demo. **Note** that it doesn't include usecases, but they can be easily added.
+This project is also a clean architecture structure demo.
 
 **/features/sample_feature** is an example of file structure and configuration of a real app feature.
 ## Flavors
