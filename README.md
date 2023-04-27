@@ -1,11 +1,11 @@
 ## HOW TO USE TEMPLATE
 
 ### 1. COPY FILES TO THE NEW PROJECT
-1. **.run folder** to the root of the project
+1. **.run and .vscode folder** to the root of the project
 2. **localization_gen.sh** to the root of the project
 3. **lib folder** to the root of the project
 4. **assets and fonts folder** to the root of the project
-5. **content from pubspec.yaml** to the pubspec.yaml
+5. **desired content from pubspec.yaml** to the pubspec.yaml
 
 ### 2. GET PACKAGES
 
