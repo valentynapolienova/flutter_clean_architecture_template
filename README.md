@@ -1,3 +1,22 @@
+## HOW TO USE TEMPLATE
+
+### 1. COPY FILES TO THE NEW PROJECT
+1. **.run folder** to the root of the project
+2. **localization_gen.sh** to the root of the project
+3. **lib folder** to the root of the project
+4. **assets and fonts folder** to the root of the project
+5. **content from pubspec.yaml** to the pubspec.yaml
+
+### 2. GET PACKAGES
+
+### 3. FIX IMPORTS ACCORDING TO THE NEW PROJECT
+
+### 4. CONFIG STYLES (FONTS, COLORS, PIXEL RESIZER...)
+
+### 5. CONFIG APP_CONFIG.DART
+
+### 6. DELETE EVERYTHING YOU DO NOT NEED
+
 # A Clean Architecture Template for Flutter App
 
 This template is made to minimize the efforts of new project creation and configuration. It has pre-installed packages (which will be listed below), flavors and some base helper classes.
@@ -48,3 +67,4 @@ There is also a **PaginationScrollController** [class for infinite pagination on
 There is a tool in the root of the project called **localization_gen.sh** - it can be used to make translations generation process easier. Run it in the terminal after you've added a new key-value pair to a translation file.
 ### Widgets
 **/core/widgets** is used to store general widgets, like base app bars, text fields, pop up templates etc. It already includes a **CvgIcon** and **CIcon** widgets, which seem to me pretty useful.
+
