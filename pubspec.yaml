@@ -61,6 +61,22 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
 
+# Flutter icon and splash screen example
+
+#flutter_native_splash:
+#  color: "#ffffff"
+#  image: assets/images/splash_icon.png
+#  android: true
+#  ios: true
+#
+#flutter_icons:
+#  image_path: "assets/images/app_icon.png"
+#  android: true
+#  ios: true
+#  adaptive_icon_background: '#ffffff'
+#  adaptive_icon_foreground: "assets/images/app_icon.png"
+#  remove_alpha_ios: true
+
 
 flutter:
 
