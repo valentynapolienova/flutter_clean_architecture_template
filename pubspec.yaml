@@ -42,18 +42,17 @@ dependencies:
 
   #config
   easy_localization: ^3.0.1
-  easy_localization_loader: ^1.0.1+1
+  easy_localization_loader: ^2.0.0
   responsive_sizer: ^3.1.1
   flutter_native_splash: ^2.2.13
   enum_to_string: ^2.0.1
-  fimber: ^0.6.6
+  fimber: ^0.7.0
   pretty_dio_logger: ^1.1.1
   build_runner: ^2.3.2
-  flutter_native_timezone: ^2.0.0
   internet_connection_checker: ^1.0.0+1
   cupertino_icons: ^1.0.2
   flutter_launcher_icons: ^0.13.1
-  intl: ^0.17.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:

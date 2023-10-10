@@ -4,7 +4,7 @@ import 'package:clean_architecture_template/core/util/pixel_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class BaseAppBar extends StatelessWidget with PreferredSizeWidget {
+class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leftWidget;
   final Widget? rightWidget;
   final Widget? centerWidget;
