@@ -24,7 +24,7 @@ abstract class AppConfig {
     Configs flavor = Configs.values.firstWhere(
       (e) =>
           e.toString() ==
-          "Configs.${const String.fromEnvironment('envFlavour', defaultValue: 'prod')}",
+          "Configs.${const String.fromEnvironment('envFlavor', defaultValue: 'prod')}",
     );
 
     switch (flavor) {
