@@ -6,7 +6,6 @@ import 'colors.dart';
 class CTheme {
   static final theme = ThemeData(
     brightness: Brightness.light,
-    backgroundColor: CColors.white,
     scaffoldBackgroundColor: CColors.white,
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
