@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class PaginationScrollController {
+mixin PaginationMixin {
   late ScrollController scrollController;
   bool isLoading = false;
   bool stopLoading = false;
   int currentPage = 1;
-  double boundaryOffset = 0.5;
+  double boundaryOffset = 0.8;
   late Function loadAction;
 
-  void init({Function? initAction, required Function loadAction}) {
+  void initPagination({Function? initAction, required Function loadAction}) {
     if (initAction != null) {
       initAction();
     }
@@ -16,14 +16,13 @@ class PaginationScrollController {
     scrollController = ScrollController()..addListener(scrollListener);
   }
 
-  void dispose() {
+  void disposePagination() {
     scrollController.removeListener(scrollListener);
     scrollController.dispose();
   }
 
   void scrollListener() {
     if (!stopLoading) {
-      //load more data
       if (scrollController.offset >=
               scrollController.position.maxScrollExtent * boundaryOffset &&
           !isLoading) {
@@ -38,5 +37,10 @@ class PaginationScrollController {
         });
       }
     }
+  }
+
+  void resetPagination() {
+    currentPage = 1;
+    stopLoading = false;
   }
 }
