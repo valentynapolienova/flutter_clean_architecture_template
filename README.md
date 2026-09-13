@@ -10,6 +10,8 @@ A starting point for real Flutter apps. You get:
 
 Clone it, rename it with one command, and start building features instead of wiring up folders.
 
+**New to clean architecture?** Read [Clean Architecture in Flutter](https://medium.com/@m1nori/clean-architecture-in-flutter-b00aa22ffad3) on Medium. It's a beginner-friendly walkthrough of this template: why it's built this way, how a tap travels through the layers, and when the approach is overkill.
+
 - [Quick start](#quick-start)
 - [Why this architecture](#why-this-architecture)
 - [The four layers](#the-four-layers)
