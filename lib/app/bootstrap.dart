@@ -16,7 +16,7 @@ const _log = AppLogger('bootstrap');
 Future<void> bootstrap(AppConfig config) async {
   WidgetsFlutterBinding.ensureInitialized();
   config.ensureValid();
-  AppLogger.minLevel = config.isProd ? LogLevel.warning : LogLevel.debug;
+  AppLogger.minLevel = config.isProd ? .warning : .debug;
   _captureUncaughtErrors();
 
   await registerDependencies(config);

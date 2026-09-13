@@ -62,7 +62,7 @@ void main() {
       final cubit = _NumbersCubit((offset) {
         requests++;
         if (offset == 0) {
-          return Future.value(
+          return .value(
             const Succeeded(PageSlice(items: [0, 1], hasMore: true)),
           );
         }
@@ -86,7 +86,7 @@ void main() {
         if (offset == 2) return stalePage.future;
         firstPageRequests++;
         final isInitial = firstPageRequests == 1;
-        return Future.value(
+        return .value(
           Succeeded(
             PageSlice(items: isInitial ? [0, 1] : [10, 11], hasMore: isInitial),
           ),

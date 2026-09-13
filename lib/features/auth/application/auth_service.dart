@@ -14,7 +14,7 @@ class AuthService {
   final AuthRepository repository;
   final TokenStorage tokenStorage;
 
-  final _userChanges = StreamController<User?>.broadcast();
+  final StreamController<User?> _userChanges = .broadcast();
 
   /// Emits the user after sign-in and `null` after sign-out, including a
   /// sign-out triggered by the network layer when a session can't be renewed.

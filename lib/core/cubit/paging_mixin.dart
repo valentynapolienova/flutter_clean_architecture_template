@@ -58,7 +58,7 @@ mixin PagingMixin<S, T> on Cubit<S> {
       success: (page) {
         _items.addAll(page.items);
         _hasMore = page.hasMore;
-        onPageLoaded(items: List.unmodifiable(_items), hasMore: _hasMore);
+        onPageLoaded(items: .unmodifiable(_items), hasMore: _hasMore);
       },
       failure: (failure) => onPageFailed(failure, isFirstPage: isFirstPage),
     );

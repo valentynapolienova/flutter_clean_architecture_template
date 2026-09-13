@@ -28,16 +28,14 @@ class PostsPage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(
-              Spacing.m,
-              Spacing.s,
-              Spacing.m,
-              Spacing.s,
+            padding: const .symmetric(
+              horizontal: Spacing.m,
+              vertical: Spacing.s,
             ),
             child: SearchBar(
               hintText: context.l10n.searchPostsHint,
               leading: const Icon(Icons.search),
-              elevation: const WidgetStatePropertyAll(0),
+              elevation: .all(0),
               onChanged: cubit.search,
             ),
           ),

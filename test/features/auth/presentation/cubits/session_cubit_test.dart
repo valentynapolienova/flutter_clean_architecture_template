@@ -59,7 +59,7 @@ void main() {
       act: (_) => userChanges
         ..add(testUser)
         ..add(null),
-      wait: Duration.zero,
+      wait: .zero,
       expect: () => const [SessionSignedIn(testUser), SessionSignedOut()],
     );
 

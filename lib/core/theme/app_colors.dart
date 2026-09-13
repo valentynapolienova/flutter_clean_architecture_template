@@ -32,8 +32,8 @@ class AppColors extends ThemeExtension<AppColors> {
   AppColors lerp(AppColors? other, double t) {
     if (other == null) return this;
     return AppColors(
-      subtleText: Color.lerp(subtleText, other.subtleText, t)!,
-      positive: Color.lerp(positive, other.positive, t)!,
+      subtleText: .lerp(subtleText, other.subtleText, t)!,
+      positive: .lerp(positive, other.positive, t)!,
     );
   }
 }

@@ -35,20 +35,20 @@ class AppLogger {
   final String name;
 
   /// Records below this level are skipped. Configured in `bootstrap`.
-  static LogLevel minLevel = LogLevel.debug;
+  static LogLevel minLevel = .debug;
 
   /// Called for every [error] record, regardless of [minLevel].
   static ErrorReporter? errorReporter;
 
-  void debug(String message) => _write(LogLevel.debug, message);
+  void debug(String message) => _write(.debug, message);
 
-  void info(String message) => _write(LogLevel.info, message);
+  void info(String message) => _write(.info, message);
 
   void warning(String message, {Object? error, StackTrace? stackTrace}) =>
-      _write(LogLevel.warning, message, error: error, stackTrace: stackTrace);
+      _write(.warning, message, error: error, stackTrace: stackTrace);
 
   void error(String message, {Object? error, StackTrace? stackTrace}) {
-    _write(LogLevel.error, message, error: error, stackTrace: stackTrace);
+    _write(.error, message, error: error, stackTrace: stackTrace);
     errorReporter?.call(message, error, stackTrace);
   }
 

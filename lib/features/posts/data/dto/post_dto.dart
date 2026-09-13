@@ -18,7 +18,7 @@ final class PostDto {
       userId: json['userId'] as int,
       title: json['title'] as String,
       body: json['body'] as String,
-      tags: List<String>.from(json['tags'] as List<dynamic>),
+      tags: .from(json['tags'] as List<dynamic>),
       likes: reactions['likes'] as int,
     );
   }

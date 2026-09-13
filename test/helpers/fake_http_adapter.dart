@@ -13,7 +13,7 @@ class FakeHttpAdapter implements HttpClientAdapter {
   final List<RequestOptions> requests = [];
 
   static ResponseBody json(Object? body, {int statusCode = 200}) {
-    return ResponseBody.fromString(
+    return .fromString(
       jsonEncode(body),
       statusCode,
       headers: {

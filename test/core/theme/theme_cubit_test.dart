@@ -47,7 +47,7 @@ void main() {
       setUp: () =>
           when(() => storage.writeThemeMode(any())).thenAnswer((_) async {}),
       build: () => ThemeCubit(storage),
-      act: (cubit) => cubit.changeThemeMode(ThemeMode.light),
+      act: (cubit) => cubit.changeThemeMode(.light),
       expect: () => const [ThemeMode.light],
       verify: (_) => verify(() => storage.writeThemeMode('light')).called(1),
     );
