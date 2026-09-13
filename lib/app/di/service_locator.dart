@@ -1,17 +1,17 @@
 import 'package:clean_architecture_template/app/config/app_config.dart';
+import 'package:clean_architecture_template/core/network/api_client.dart';
+import 'package:clean_architecture_template/core/network/auth_interceptor.dart';
+import 'package:clean_architecture_template/core/storage/secure_token_storage.dart';
+import 'package:clean_architecture_template/core/storage/settings_storage.dart';
+import 'package:clean_architecture_template/core/storage/shared_prefs_settings_storage.dart';
+import 'package:clean_architecture_template/core/storage/token_storage.dart';
+import 'package:clean_architecture_template/core/theme/theme_cubit.dart';
 import 'package:clean_architecture_template/features/auth/application/auth_service.dart';
 import 'package:clean_architecture_template/features/auth/data/auth_repository.dart';
 import 'package:clean_architecture_template/features/auth/presentation/cubits/session/session_cubit.dart';
 import 'package:clean_architecture_template/features/posts/application/posts_service.dart';
 import 'package:clean_architecture_template/features/posts/data/authors_repository.dart';
 import 'package:clean_architecture_template/features/posts/data/posts_repository.dart';
-import 'package:clean_architecture_template/shared/network/api_client.dart';
-import 'package:clean_architecture_template/shared/network/auth_interceptor.dart';
-import 'package:clean_architecture_template/shared/storage/secure_token_storage.dart';
-import 'package:clean_architecture_template/shared/storage/settings_storage.dart';
-import 'package:clean_architecture_template/shared/storage/shared_prefs_settings_storage.dart';
-import 'package:clean_architecture_template/shared/storage/token_storage.dart';
-import 'package:clean_architecture_template/shared/theme/theme_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 /// The service locator. Read it only here, in `bootstrap.dart` and in route
@@ -22,13 +22,13 @@ final GetIt sl = GetIt.instance;
 const publicApiName = 'publicApi';
 
 Future<void> registerDependencies(AppConfig config) async {
-  _registerShared(config);
+  _registerCore(config);
   _registerAuth();
   _registerPosts();
   await sl.allReady();
 }
 
-void _registerShared(AppConfig config) {
+void _registerCore(AppConfig config) {
   sl
     ..registerSingleton<AppConfig>(config)
     ..registerLazySingleton<SettingsStorage>(SharedPrefsSettingsStorage.new)

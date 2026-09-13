@@ -1,6 +1,6 @@
+import 'package:clean_architecture_template/core/result/page_slice.dart';
 import 'package:clean_architecture_template/features/posts/data/dto/post_dto.dart';
 import 'package:clean_architecture_template/features/posts/domain/post.dart';
-import 'package:clean_architecture_template/shared/result/page_slice.dart';
 
 /// A page of posts with the API's paging fields.
 final class PostsResponseDto {

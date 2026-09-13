@@ -1,6 +1,6 @@
+import 'package:clean_architecture_template/core/result/page_slice.dart';
 import 'package:clean_architecture_template/features/posts/data/posts_repository.dart';
 import 'package:clean_architecture_template/features/posts/domain/post.dart';
-import 'package:clean_architecture_template/shared/result/page_slice.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

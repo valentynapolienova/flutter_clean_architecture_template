@@ -1,11 +1,11 @@
 import 'dart:async';
 
+import 'package:clean_architecture_template/core/errors/app_failure.dart';
+import 'package:clean_architecture_template/core/result/failable.dart';
+import 'package:clean_architecture_template/core/result/repository_request_handler.dart';
+import 'package:clean_architecture_template/core/storage/token_storage.dart';
 import 'package:clean_architecture_template/features/auth/data/auth_repository.dart';
 import 'package:clean_architecture_template/features/auth/domain/user.dart';
-import 'package:clean_architecture_template/shared/errors/app_failure.dart';
-import 'package:clean_architecture_template/shared/result/failable.dart';
-import 'package:clean_architecture_template/shared/result/repository_request_handler.dart';
-import 'package:clean_architecture_template/shared/storage/token_storage.dart';
 
 /// Signs users in and out and owns their tokens.
 class AuthService {

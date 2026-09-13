@@ -1,8 +1,8 @@
+import 'package:clean_architecture_template/core/extensions/build_context_x.dart';
+import 'package:clean_architecture_template/core/theme/spacing.dart';
+import 'package:clean_architecture_template/core/widgets/error_view.dart';
+import 'package:clean_architecture_template/core/widgets/page_loader.dart';
 import 'package:clean_architecture_template/features/posts/presentation/cubits/post_details/post_details_cubit.dart';
-import 'package:clean_architecture_template/shared/extensions/build_context_x.dart';
-import 'package:clean_architecture_template/shared/theme/spacing.dart';
-import 'package:clean_architecture_template/shared/widgets/error_view.dart';
-import 'package:clean_architecture_template/shared/widgets/page_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

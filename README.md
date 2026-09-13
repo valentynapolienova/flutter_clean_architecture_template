@@ -26,6 +26,8 @@ Clone it, rename it with one command, and start building features instead of wir
 
 You need **Flutter 3.47.2**. The version is pinned in `.fvmrc`, so with [FVM](https://fvm.app) run `fvm use` and put `fvm` in front of the commands below.
 
+`.vscode/settings.json` tells VS Code to use the FVM copy of the SDK (`.fvm/versions/3.47.2`). If you don't use FVM, delete that file or point `dart.flutterSdkPath` at your own Flutter 3.47.2. An older SDK can't resolve `sdk: ^3.13.0`, and every file shows errors.
+
 **1. Get the code**
 
 On GitHub, click **Use this template → Create a new repository** and clone your new repository. Or, without GitHub:
@@ -151,7 +153,7 @@ lib/
 │   ├── config/app_config.dart
 │   ├── di/service_locator.dart
 │   └── router/                      # routes, session guard
-├── shared/                          # building blocks used by every feature
+├── core/                            # building blocks used by every feature
 │   ├── cubit/                       # EmitGuardMixin, PagingMixin, DebounceMixin
 │   ├── errors/                      # AppFailure
 │   ├── extensions/                  # context.l10n, failure.toMessage(...)
@@ -181,14 +183,14 @@ tool/rename.sh
 | State management | [flutter_bloc](https://pub.dev/packages/flutter_bloc) (Cubit) | `features/*/presentation/cubits` |
 | Dependency injection | [get_it](https://pub.dev/packages/get_it) | `app/di` |
 | Navigation and route guard | [go_router](https://pub.dev/packages/go_router) | `app/router` |
-| Networking | [dio](https://pub.dev/packages/dio) behind `ApiClient` | `shared/network` |
-| Authentication | Login, stored session, automatic token refresh | `features/auth`, `shared/network/auth_interceptor.dart` |
-| Paging and search | `PagingMixin` and `DebounceMixin` for cubits | `shared/cubit` |
-| Error handling | Sealed `AppFailure` → `Failable<T>` → translated message | `shared/errors`, `shared/result` |
-| Device storage | [shared_preferences](https://pub.dev/packages/shared_preferences) for settings, [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage) for tokens | `shared/storage` |
+| Networking | [dio](https://pub.dev/packages/dio) behind `ApiClient` | `core/network` |
+| Authentication | Login, stored session, automatic token refresh | `features/auth`, `core/network/auth_interceptor.dart` |
+| Paging and search | `PagingMixin` and `DebounceMixin` for cubits | `core/cubit` |
+| Error handling | Sealed `AppFailure` → `Failable<T>` → translated message | `core/errors`, `core/result` |
+| Device storage | [shared_preferences](https://pub.dev/packages/shared_preferences) for settings, [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage) for tokens | `core/storage` |
 | Localization | Flutter's `gen-l10n` (ARB files) | `lib/l10n` |
-| Theming | Material 3, light and dark, remembered between launches | `shared/theme` |
-| Logging | `AppLogger` on `dart:developer`, with one hook for crash reporting | `shared/logging` |
+| Theming | Material 3, light and dark, remembered between launches | `core/theme` |
+| Logging | `AppLogger` on `dart:developer`, with one hook for crash reporting | `core/logging` |
 | Environments | `main_<env>.dart` + `env/<env>.json` | `lib/`, `env/` |
 | Lints | [very_good_analysis](https://pub.dev/packages/very_good_analysis), [bloc_lint](https://pub.dev/packages/bloc_lint) | `analysis_options.yaml` |
 | Tests | [bloc_test](https://pub.dev/packages/bloc_test), [mocktail](https://pub.dev/packages/mocktail), [fake_async](https://pub.dev/packages/fake_async) | `test/` |

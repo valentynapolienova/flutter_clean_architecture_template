@@ -1,15 +1,15 @@
 import 'dart:async';
 
 import 'package:clean_architecture_template/app/router/routes.dart';
+import 'package:clean_architecture_template/core/errors/app_failure.dart';
+import 'package:clean_architecture_template/core/extensions/build_context_x.dart';
+import 'package:clean_architecture_template/core/theme/spacing.dart';
+import 'package:clean_architecture_template/core/widgets/error_view.dart';
+import 'package:clean_architecture_template/core/widgets/page_loader.dart';
+import 'package:clean_architecture_template/core/widgets/theme_mode_button.dart';
 import 'package:clean_architecture_template/features/auth/presentation/widgets/sign_out_button.dart';
 import 'package:clean_architecture_template/features/posts/presentation/cubits/posts_list/posts_list_cubit.dart';
 import 'package:clean_architecture_template/features/posts/presentation/widgets/post_tile.dart';
-import 'package:clean_architecture_template/shared/errors/app_failure.dart';
-import 'package:clean_architecture_template/shared/extensions/build_context_x.dart';
-import 'package:clean_architecture_template/shared/theme/spacing.dart';
-import 'package:clean_architecture_template/shared/widgets/error_view.dart';
-import 'package:clean_architecture_template/shared/widgets/page_loader.dart';
-import 'package:clean_architecture_template/shared/widgets/theme_mode_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

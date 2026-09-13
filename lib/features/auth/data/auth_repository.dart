@@ -1,10 +1,10 @@
+import 'package:clean_architecture_template/core/errors/app_failure.dart';
+import 'package:clean_architecture_template/core/network/api_client.dart';
 import 'package:clean_architecture_template/features/auth/data/dto/auth_tokens_dto.dart';
 import 'package:clean_architecture_template/features/auth/data/dto/user_dto.dart';
 import 'package:clean_architecture_template/features/auth/domain/auth_session.dart';
 import 'package:clean_architecture_template/features/auth/domain/auth_tokens.dart';
 import 'package:clean_architecture_template/features/auth/domain/user.dart';
-import 'package:clean_architecture_template/shared/errors/app_failure.dart';
-import 'package:clean_architecture_template/shared/network/api_client.dart';
 
 /// Talks to the auth endpoints of DummyJSON (https://dummyjson.com/docs/auth).
 /// Replace the paths and DTOs to connect your own backend.

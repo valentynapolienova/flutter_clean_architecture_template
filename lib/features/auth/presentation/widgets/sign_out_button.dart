@@ -1,5 +1,5 @@
+import 'package:clean_architecture_template/core/extensions/build_context_x.dart';
 import 'package:clean_architecture_template/features/auth/presentation/cubits/session/session_cubit.dart';
-import 'package:clean_architecture_template/shared/extensions/build_context_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

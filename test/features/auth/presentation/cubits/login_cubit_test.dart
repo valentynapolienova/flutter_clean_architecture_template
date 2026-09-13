@@ -1,8 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:clean_architecture_template/core/errors/app_failure.dart';
+import 'package:clean_architecture_template/core/result/failable.dart';
 import 'package:clean_architecture_template/features/auth/domain/user.dart';
 import 'package:clean_architecture_template/features/auth/presentation/cubits/login/login_cubit.dart';
-import 'package:clean_architecture_template/shared/errors/app_failure.dart';
-import 'package:clean_architecture_template/shared/result/failable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

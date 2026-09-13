@@ -10,10 +10,10 @@ This guide is for AI coding agents working in this repository. Human-oriented do
 | State | `flutter_bloc`, Cubits only |
 | Dependency injection | `get_it`, instance `sl` in `lib/app/di/service_locator.dart` |
 | Navigation | `go_router`, built by `createRouter` in `lib/app/router/app_router.dart` |
-| Network | `dio`, wrapped by `ApiClient` in `lib/shared/network/` |
+| Network | `dio`, wrapped by `ApiClient` in `lib/core/network/` |
 | Device storage | `shared_preferences` (settings), `flutter_secure_storage` (tokens) |
 | Strings | `gen-l10n` from `lib/l10n/app_en.arb` → `lib/l10n/generated/` |
-| Logging | `AppLogger` (`lib/shared/logging/`) on `dart:developer` |
+| Logging | `AppLogger` (`lib/core/logging/`) on `dart:developer` |
 | Tests | `flutter_test`, `bloc_test`, `mocktail`, `fake_async` |
 | Lints | `very_good_analysis` 11, `bloc_lint` |
 
@@ -44,7 +44,7 @@ lib/
 │   ├── config/app_config.dart   # Environment, AppConfig
 │   ├── di/service_locator.dart  # sl, registerDependencies, _registerX per area
 │   └── router/                  # app_router.dart, routes.dart, stream_listenable.dart
-├── shared/                      # never imports app/ or features/
+├── core/                        # never imports app/ or features/
 │   ├── cubit/                   # EmitGuardMixin, DebounceMixin, PagingMixin
 │   ├── errors/app_failure.dart
 │   ├── extensions/              # BuildContextX (l10n, theme), FailureMessage
@@ -66,7 +66,7 @@ lib/
 ```
 
 Import boundaries:
-- `shared/` stays feature-agnostic.
+- `core/` stays feature-agnostic.
 - A feature may import another feature's `domain/` and `presentation/widgets/`, for example `SignOutButton` in `PostsPage`, but never another feature's `data/`, `application/` or cubits.
 - Pages may import `app/router/routes.dart` for route paths.
 
@@ -93,7 +93,7 @@ Page ─▶ Cubit ─▶ Service ─▶ Repository ─▶ ApiClient / storage
 - **Calling the API:** use `api.getJson` / `getJsonList` / `postJson` / `putJson` / `patchJson` / `delete`, convert responses with a DTO's `toDomain()`, and return domain types.
 - **Failures:** failures thrown by `ApiClient` pass through. Catch one only to give it a more specific meaning, as `AuthRepository.signIn` does when it maps a 400 to `InvalidCredentialsFailure`.
 - **DTOs** are `final class XDto` in `data/dto/`, with `factory XDto.fromJson(Map<String, dynamic>)` using explicit casts and `toDomain()`. If a payload doesn't match, the cast throws a `TypeError`, which the request handler reports as `UnexpectedFailure`.
-- **Storages** (`shared/storage/`): an `abstract interface class` plus an implementation that wraps each platform call in `guardStorage`. Keys are private constants in the implementation. Storages hold no logic.
+- **Storages** (`core/storage/`): an `abstract interface class` plus an implementation that wraps each platform call in `guardStorage`. Keys are private constants in the implementation. Storages hold no logic.
 - **Authentication:** requests that need a signed-in user use the default `ApiClient`. Only sign-in and token refresh use `sl<ApiClient>(instanceName: publicApiName)`.
 
 ### 4.3 Application
@@ -151,7 +151,7 @@ Pages and widgets:
 
 ## 5. Failures
 
-- **Where they're defined:** all failures are `final class`es in `lib/shared/errors/app_failure.dart`. The file is sealed, so the list is closed.
+- **Where they're defined:** all failures are `final class`es in `lib/core/errors/app_failure.dart`. The file is sealed, so the list is closed.
 - **How they flow:**
   - `ApiClient` maps Dio errors: timeouts → `TimeoutFailure`, connection errors → `NoConnectionFailure`, 401 → `UnauthorizedFailure`, other statuses or a non-object body → `ServerFailure(statusCode)`.
   - `RepositoryRequestHandler` returns thrown `AppFailure`s as `Failed(...)`. Anything else becomes `Failed(UnexpectedFailure(error))` and is logged as an error.
@@ -161,7 +161,7 @@ Pages and widgets:
   3. Add a `case` to `FailureMessage.toMessage`. The analyzer flags every `switch` that's now incomplete.
   4. Throw it from the repository that can detect it.
 
-## 6. Cubit mixins (`lib/shared/cubit/`)
+## 6. Cubit mixins (`lib/core/cubit/`)
 
 | Mixin | Use | API |
 |---|---|---|
@@ -179,7 +179,7 @@ Pages and widgets:
 
 ## 7. Dependency injection
 
-- **Structure:** `registerDependencies` calls one private function per area: `_registerShared`, `_registerAuth`, `_registerPosts`. A new feature gets its own `_registerX`.
+- **Structure:** `registerDependencies` calls one private function per area: `_registerCore`, `_registerAuth`, `_registerPosts`. A new feature gets its own `_registerX`.
 - **Registration types:**
   - Storages, clients, repositories and services use `registerLazySingleton`.
   - Anything that needs async setup uses `registerSingletonAsync`, which `sl.allReady()` waits for.

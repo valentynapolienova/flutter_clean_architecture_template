@@ -1,8 +1,8 @@
+import 'package:clean_architecture_template/core/network/api_client.dart';
+import 'package:clean_architecture_template/core/result/page_slice.dart';
 import 'package:clean_architecture_template/features/posts/data/dto/post_dto.dart';
 import 'package:clean_architecture_template/features/posts/data/dto/posts_response_dto.dart';
 import 'package:clean_architecture_template/features/posts/domain/post.dart';
-import 'package:clean_architecture_template/shared/network/api_client.dart';
-import 'package:clean_architecture_template/shared/result/page_slice.dart';
 
 class PostsRepository {
   const new({required this.api});

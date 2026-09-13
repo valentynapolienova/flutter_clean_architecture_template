@@ -1,10 +1,10 @@
+import 'package:clean_architecture_template/core/result/failable.dart';
+import 'package:clean_architecture_template/core/result/page_slice.dart';
+import 'package:clean_architecture_template/core/result/repository_request_handler.dart';
 import 'package:clean_architecture_template/features/posts/data/authors_repository.dart';
 import 'package:clean_architecture_template/features/posts/data/posts_repository.dart';
 import 'package:clean_architecture_template/features/posts/domain/post.dart';
 import 'package:clean_architecture_template/features/posts/domain/post_details.dart';
-import 'package:clean_architecture_template/shared/result/failable.dart';
-import 'package:clean_architecture_template/shared/result/page_slice.dart';
-import 'package:clean_architecture_template/shared/result/repository_request_handler.dart';
 
 class PostsService {
   const new({required this.postsRepository, required this.authorsRepository});

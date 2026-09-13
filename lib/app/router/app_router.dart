@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:clean_architecture_template/app/di/service_locator.dart';
 import 'package:clean_architecture_template/app/router/routes.dart';
 import 'package:clean_architecture_template/app/router/stream_listenable.dart';
+import 'package:clean_architecture_template/core/widgets/not_found_page.dart';
 import 'package:clean_architecture_template/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:clean_architecture_template/features/auth/presentation/cubits/session/session_cubit.dart';
 import 'package:clean_architecture_template/features/auth/presentation/pages/login_page.dart';
@@ -11,7 +12,6 @@ import 'package:clean_architecture_template/features/posts/presentation/cubits/p
 import 'package:clean_architecture_template/features/posts/presentation/cubits/posts_list/posts_list_cubit.dart';
 import 'package:clean_architecture_template/features/posts/presentation/pages/post_details_page.dart';
 import 'package:clean_architecture_template/features/posts/presentation/pages/posts_page.dart';
-import 'package:clean_architecture_template/shared/widgets/not_found_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

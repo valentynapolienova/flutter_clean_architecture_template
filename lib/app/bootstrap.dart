@@ -5,9 +5,9 @@ import 'package:clean_architecture_template/app/app.dart';
 import 'package:clean_architecture_template/app/config/app_config.dart';
 import 'package:clean_architecture_template/app/di/service_locator.dart';
 import 'package:clean_architecture_template/app/router/app_router.dart';
+import 'package:clean_architecture_template/core/logging/app_logger.dart';
+import 'package:clean_architecture_template/core/theme/theme_cubit.dart';
 import 'package:clean_architecture_template/features/auth/presentation/cubits/session/session_cubit.dart';
-import 'package:clean_architecture_template/shared/logging/app_logger.dart';
-import 'package:clean_architecture_template/shared/theme/theme_cubit.dart';
 import 'package:flutter/widgets.dart';
 
 const _log = AppLogger('bootstrap');

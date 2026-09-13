@@ -1,11 +1,11 @@
+import 'package:clean_architecture_template/core/network/api_client.dart';
+import 'package:clean_architecture_template/core/storage/settings_storage.dart';
+import 'package:clean_architecture_template/core/storage/token_storage.dart';
 import 'package:clean_architecture_template/features/auth/application/auth_service.dart';
 import 'package:clean_architecture_template/features/auth/data/auth_repository.dart';
 import 'package:clean_architecture_template/features/posts/application/posts_service.dart';
 import 'package:clean_architecture_template/features/posts/data/authors_repository.dart';
 import 'package:clean_architecture_template/features/posts/data/posts_repository.dart';
-import 'package:clean_architecture_template/shared/network/api_client.dart';
-import 'package:clean_architecture_template/shared/storage/settings_storage.dart';
-import 'package:clean_architecture_template/shared/storage/token_storage.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockApiClient extends Mock implements ApiClient;

@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:clean_architecture_template/core/extensions/build_context_x.dart';
+import 'package:clean_architecture_template/core/extensions/failure_message.dart';
+import 'package:clean_architecture_template/core/theme/spacing.dart';
 import 'package:clean_architecture_template/features/auth/presentation/cubits/login/login_cubit.dart';
-import 'package:clean_architecture_template/shared/extensions/build_context_x.dart';
-import 'package:clean_architecture_template/shared/extensions/failure_message.dart';
-import 'package:clean_architecture_template/shared/theme/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

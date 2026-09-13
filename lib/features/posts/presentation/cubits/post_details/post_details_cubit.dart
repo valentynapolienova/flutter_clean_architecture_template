@@ -1,7 +1,7 @@
+import 'package:clean_architecture_template/core/cubit/emit_guard_mixin.dart';
+import 'package:clean_architecture_template/core/errors/app_failure.dart';
 import 'package:clean_architecture_template/features/posts/application/posts_service.dart';
 import 'package:clean_architecture_template/features/posts/domain/post_details.dart';
-import 'package:clean_architecture_template/shared/cubit/emit_guard_mixin.dart';
-import 'package:clean_architecture_template/shared/errors/app_failure.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

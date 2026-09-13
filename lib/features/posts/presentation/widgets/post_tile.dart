@@ -1,5 +1,5 @@
+import 'package:clean_architecture_template/core/extensions/build_context_x.dart';
 import 'package:clean_architecture_template/features/posts/domain/post.dart';
-import 'package:clean_architecture_template/shared/extensions/build_context_x.dart';
 import 'package:flutter/material.dart';
 
 class PostTile extends StatelessWidget {
