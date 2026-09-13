@@ -5,22 +5,23 @@
       "name": "dev",
       "request": "launch",
       "type": "dart",
-      "args": [
-        "--dart-define=envFlavor=dev",
-        "--flavor",
-        "dev"
-      ]
+      "program": "lib/main_dev.dart",
+      "args": ["--dart-define-from-file=env/dev.json"]
     },
     {
       "name": "prod",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "profile",
-      "args": [
-        "--dart-define=envFlavor=prod",
-        "--flavor",
-        "prod"
-      ]
+      "program": "lib/main_prod.dart",
+      "args": ["--dart-define-from-file=env/prod.json"]
+    },
+    {
+      "name": "prod (release)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "lib/main_prod.dart",
+      "args": ["--dart-define-from-file=env/prod.json"]
     }
   ]
 }

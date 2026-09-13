@@ -1,0 +1,44 @@
+{
+  "@@locale": "en",
+  "appTitle": "Clean Architecture Template",
+  "postsTitle": "Posts",
+  "postDetailsTitle": "Post",
+  "searchPostsHint": "Search posts",
+  "noPostsYet": "No posts yet.",
+  "noPostsFound": "No posts match your search.",
+  "writtenBy": "Written by {name}",
+  "@writtenBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "likesCount": "{count, plural, =1{1 like} other{{count} likes}}",
+  "@likesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "retry": "Retry",
+  "pageNotFound": "Page not found.",
+  "goHome": "Go to home",
+  "toggleTheme": "Toggle theme",
+  "loginTitle": "Welcome back",
+  "loginSubtitle": "Sign in to read the posts.",
+  "usernameLabel": "Username",
+  "passwordLabel": "Password",
+  "signInButton": "Sign in",
+  "useDemoAccount": "Use demo account",
+  "signOut": "Sign out",
+  "fieldRequired": "This field is required.",
+  "errorNoConnection": "No internet connection. Check your network and try again.",
+  "errorTimeout": "The server took too long to respond. Try again.",
+  "errorServer": "The server couldn't handle the request. Try again later.",
+  "errorSessionExpired": "Your session has expired. Please sign in again.",
+  "errorInvalidCredentials": "Wrong username or password.",
+  "errorStorage": "Couldn't access data saved on this device.",
+  "errorUnexpected": "Something went wrong. Try again."
+}
